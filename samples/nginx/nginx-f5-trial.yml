@@ -44,19 +44,12 @@ data:
       "virtualServer": {
         "backend": {
           "servicePort": 80,
-          "serviceName": "f5-nginx",
-          "healthMonitors": [{
-            "interval": 30,
-            "protocol": "http",
-            "send": "GET HTTP/1.1/\r\n",
-            "recv": "200|OK",
-            "timeout": 120
-          }]
+          "serviceName": "f5-nginx"
         },
         "frontend": {
           "virtualAddress": {
             "port": 8080,
-            "bindAddr": "10.9.25.71"
+            "bindAddr": "172.15.200.20"
           },
           "partition": "kubernetes",
           "balance": "least-connections-member",
